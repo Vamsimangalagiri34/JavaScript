@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class2</title>
+</head>
+<body>
+    <script>
+        class Vamsi {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            method1() {
+                const data = this.name + " " + this.age;
+                return data;
+            }
+        }
+        
+        const obj = new Vamsi("vamsi", "21");
+        console.log(obj.method1());
+
+        // Corrected usage of the setter
+        obj.method2 = ["hyderabad", "vijayawada"];  
+        console.log(obj.method2);  // Logs the "method2" property set by the setter
+
+        class Ramu {
+            constructor(id, name, title) {
+                this.id = id;
+                this.name = name;
+                this.title = title;
+            }
+            
+            assigning() {
+                const obj = {"id": this.id, "name": this.name, "title": this.title};
+                return obj;
+            }
+        }
+
+        function drip() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const y = new Ramu('i2', 'vamsi', 'alludu');
+                    resolve(y.assigning());
+                }, 5000);
+            });
+        }
+
+        async function deim() {
+            try {
+                const kop = await drip();
+                console.log(kop);
+                console.log(kop.id);
+            } catch (error) {
+                console.log('Error:', error);
+            }
+        }
+
+        deim();
+    </script>
+</body>
+</html>

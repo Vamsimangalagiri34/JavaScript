@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbach hell</title>
+</head>
+<body>
+    <script>
+        /*
+         Pyramid of Doom
+        nested callbacks, especially when they become deeply nested or complex, are often referred to as "callback hell." This term is used to describe a situation
+         where multiple asynchronous operations are nested within one another, making the code harder to read, understand, and maintain.
+         old pattern to handle asynchronous functions.
+         use promises + async /await to avoid callback hell.
+         A callback is a function that is passed as an argument to another function and is executed after the completion of a specific task.
+        */
+        /*
+One of the best examples of using asynchronous operations is in web applications that involve fetching data from an API and updating the user interface dynamically without blocking the main thread.
+
+        */
+    function task1(callback){
+        setTimeout(()=>{
+            console.log('im from task1');
+            callback();
+        },3000);
+    }
+    function task2(callback2){
+        setTimeout(()=>{
+            console.log('im from task2');
+            callback2();
+        },2090);
+    }
+    function task3(callback3){
+        setTimeout(()=>{
+            console.log('im from task3');
+            callback3();
+        },4000);
+    }
+    
+    function task4(callback4){
+        setTimeout(()=>{
+            console.log('im from task4');
+            callback4();
+        },2050);
+    }
+    
+    function task5(callback1){
+        setTimeout(()=>{
+            console.log('im from task5');
+            callback1();
+        },2300);
+    }
+    
+    task1(()=>{//like task1(t2) it execut task2 we pass task2 function as a parameter the parameter act as callback=task2 as same as all for
+        task2(()=>{
+            task1(()=>{
+               task3(()=>{
+                  task4(()=>{
+                    task5(()=>{
+                        console.log('all test cases are passed');
+                    })
+                  })
+               })
+            });
+        });
+    })
+    </script>
+</body>
+</html>

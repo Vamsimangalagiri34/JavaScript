@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>workspace</title>
+</head>
+<body>
+    <input type="button" placeholder="" id="plh" value="add" style="background:green;">
+    <input type="button" value="delete" id="delt" style="background:red;">
+    <script>
+        var s = new Set();
+        var i = 0;
+        var siz;
+        const btn = document.getElementById("plh");
+
+        function addM() {
+            let n = 1;
+            siz = s.size;
+            if (siz < 5) {
+                i = i + 1;
+                s.add(i);
+                console.log(s)
+            } 
+        }
+
+        btn.addEventListener('click', addM);
+
+        const delt = document.getElementById('delt');
+        delt.addEventListener('click', deltM);
+
+        function deltM() {
+            let ar = Array.from(s)[s.size - 1];
+            let isDeleted = s.delete(ar);
+            console.log('Deleted element: ' + ar);
+            console.log('Deletion success: ' + isDeleted);
+            console.log('Updated set: ' + Array.from(s));//convert the set into an array
+            console.log('Current size: ' + s.size);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theater Boxes</title>
+    <style>
+        .divC {
+            height: 80%;
+            width: 70%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 10px;
+            border: 2px solid black;
+            margin: 0 auto;
+        }
+        .box {
+            height: 50px;
+            width: 50px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgrey;
+        }
+        .box:hover {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="divC"></div>
+
+    <script>
+        var d = document.querySelector('.divC');
+        for (let i = 0; i < 5; i++) {
+            let a = 'A';  // Reset 'a' for each row
+            for (let j = 0; j < 5; j++) {
+                var box = document.createElement('div');
+                box.classList.add('box');
+                box.innerHTML = `${a}R${i+1}S${j+1}`; // Row and Seat number
+                d.append(box);
+                a = String.fromCharCode(a.charCodeAt(0) + 1); // Increment letter
+            }
+        }
+    </script>
+</body>
+</html>

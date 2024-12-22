@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aysnchronous</title>
+</head><!-- 
+    In JavaScript, asynchronous operations are those that don't block the execution 
+    of the rest of the code. Instead, they are scheduled to run after a certain time, after the completion of an I/O operation (like reading a file or making a network request), or in response to an event. -->
+<body>
+    <!--
+        Definition: Synchronous code executes one operation at a time, blocking further execution until the current operation is complete.
+Characteristics: Predictable execution order, easy to understand, but can be less efficient for tasks that take time.
+        dont block the code means 
+    by defaultly java follows Synchronous code execution it means one line after other get execcuted
+    like
+    -->
+    <!-- 
+        the setTimeout function is commonly used to simulate asynchronous behavior in JavaScript. While JavaScript is a single-threaded language, certain operations, such as network requests or animations, can be time-consuming.
+         setTimeout allows you to schedule a function to be executed after a specified delay, allowing the rest of the code to continue its execution without waiting for the delayed function to complete.
+     -->
+
+     <!-- console.log("hey lambda");//it execute first 
+        alert("you will achive one day");//after these we have to press ok to complete its execution
+        console.log("see you later");//after executing alert completelt 3rd statement execute.
+    
+       When I say that an asynchronous function returns a promise implicitly, I mean that the function itself doesn't need to explicitly create or return a Promise object.
+        The JavaScript runtime automatically wraps the return value of an asynchronous function in a promise
+
+        Asynchronous operations are typically associated with callbacks, promises, or async/await. 
+        It allows the program to pause and resume at that point once the asynchronous operation is done
+        Definition: Asynchronous code allows non-blocking operations, enabling the program to proceed with other tasks while waiting for specific operations to complete.
+Characteristics: Efficient for tasks that involve waiting, may involve callbacks, promises, or async/await.
+    -->
+    <script>
+        function fun1(call){
+setTimeout(()=>{
+    console.log('im from tadk1');
+},2000);
+call();
+        }
+        function fun2(){
+            console.log('hey im form fun2')
+        }
+
+fun1(fun2);
+
+    function pro() {
+      return new Promise((re, rj) => {
+        setTimeout(()=>{
+        re("done");
+        console.log('im done');
+        },3000);
+      });
+    }
+    
+    async function por() {
+      console.log("async");
+      const p = await pro();
+      console.log('awaited');
+      alert("i had been waiting for 3s");
+    }
+    
+    por();
+    
+    </script>
+</body>
+
+</html>

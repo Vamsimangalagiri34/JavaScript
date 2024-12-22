@@ -1,0 +1,31 @@
+    
+    [{
+    "name":"vamsi",
+    "age":21,
+    "address":{
+        "country":"India",
+        "city":"Vijayawada",
+        "state":"NTR",
+        "village":"sobbala"
+    }
+},
+    {
+        "name":"vamsi",
+        "age":21,
+        "address":{
+            "country":"India",
+            "city":"Vijayawada",
+            "state":"NTR",
+            "village":"sobbala"
+        }
+
+    }
+    ,{
+        "name":"sita ram",
+        "age":21,
+        "address":"india",
+        "position":"software engineer"
+    }
+      ]
+      
+

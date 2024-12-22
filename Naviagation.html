@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigation</title>
+</head>
+<body>
+    <script>
+        //In JavaScript, the term "navigator" refers to the Navigator object, which is part of the window object in browsers. 
+        //The Navigator object provides information about the browser's name, version, platform, and capabilities. It allows JavaScript code to query information about the environment in which it is executing
+        //The "navigation" in JavaScript often refers to managing the navigation of web pages within a browser window or tab. 
+        //This typically involves actions like navigating to a new URL, going back or forward in the browser's history, or reloading the current page
+        //JavaScript provides methods for performing these navigation actions. For example:
+
+//window.location: Provides information about the current URL and allows you to navigate to a new URL.
+//window.history: Allows you to manipulate the browser's history, enabling actions like going back or forward in the history stack.
+//window.location.reload(): Reloads the current page.
+
+//In summary, "navigation" is about moving between web pages or changing the state of the current page, while "navigator" refers to the JavaScript object that provides information about the browser environment. 
+//They are related concepts but serve different purposes in web development.
+           var platfromnam=navigator.platform;
+           console.log(platfromnam);
+           var appm=navigator.appVersion;
+           console.log(appm);
+           var isonline=navigator.onLine;
+           console.log(isonline);
+           <!-- window.history.back(); -->
+
+    </script>
+    <input type="button" onclick="window.history.back()" value="back">
+    <input type="button" onclick="window.history.forward()" value="forward">
+
+</body>
+</html>

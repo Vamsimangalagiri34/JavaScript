@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemoveElementlistener</title>
+</head>
+<body>
+    <input type="button" value="Dark" name="btn" class="btn">
+    <script>
+        const btn = document.querySelector('.btn');
+        const bd = document.querySelector('body');
+        let darkMode = false;
+
+        const toggleMode = function() {//node.reomveEvent('eventname',function())
+            if (!darkMode) {
+                bd.style.background = 'black';
+                bd.style.color = 'white';
+                btn.value = 'Light';
+            } else {
+                bd.style.background = 'white';
+                bd.style.color = 'black';
+                btn.value = 'Dark';
+            }
+            darkMode = !darkMode; // Toggle the mode flag
+        };
+
+        btn.addEventListener('click', toggleMode);
+    </script>
+</body>
+</html>

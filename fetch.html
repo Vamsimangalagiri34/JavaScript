@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch data from API</title>
+</head>
+<body>
+    <script>
+       const pro= fetch('https://jsonplaceholder.typicode.com/todos/1')
+//fetch it return promise object
+        pro.then(response=>{//when the promise is fullfilled then .then method get invoked
+            if(!response.ok){
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data=>{
+            console.log(data);
+            console.log(data.title);
+        })//when promise is rejected then .catch method well get invoked
+        .catch(err=>{
+            console.log('Error v fetching data',err);
+        })
+    </script>
+</body>
+</html>

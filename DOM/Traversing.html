@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing</title>
+</head>
+<body>
+    <div class="vamsi"><h2>hello im traversing</h2><h2 class="f">hello im traversing</h2><h2>hello im traversing</h2><h2>hello im traversing</h2>
+    </div>
+    <script>
+        let v =document.querySelector("h2");
+        console.log(v.parentNode);//we can get parent element
+        var a=document.querySelector(".vamsi");
+        console.log(a.firstChild);
+        console.log(a.childNodes);
+        var m=document.querySelector(".f");
+        console.log(m.previousElementSibling);
+        console.log(m.nextElementSibling);
+    </script>
+</body>
+</html>

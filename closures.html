@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<!-- Data Privacy and Encapsulation:
+Closures enable the creation of private variables and methods. By encapsulating data within a closure, 
+you can control access and modification, enhancing data privacy in your code.
+javascript
+ -->
+ 
+<body>
+    <script>
+        function outerFunc(outervar){
+            return function innerFunc(innerVar){
+                console.log(outervar);
+                console.log(innerVar);
+            }
+        }
+        const outer = outerFunc("outer");
+        outer("inner"); 
+
+<!-- most important question -->
+        function createCounter() {
+            let count = 0;
+            return function increment() {
+                count++;
+                console.log(count);
+            };
+        }
+
+        
+        const counter = createCounter();
+        counter(); // Outputs: 1
+        counter(); // Outputs: 2
+        
+    </script>
+</body>
+</html>

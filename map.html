@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+
+<!-- Common Operations:
+
+set(key, value): Adds a key-value pair to the map .
+get(key): Retrieves the value associated with a key .
+delete(key): Removes a key-value pair from the map .
+has(key): Checks if a key is present in the map .
+size: Returns the number of key-value pairs in the map .
+
+ Set is also an unordered collection of unique values, and it does not support indexing to access elements directly by position. Instead, Sets provide methods for adding, deleting, and checking the presence of elements. 
+
+-->
+
+<body>
+    <script>
+        const m=new Map();
+        m.set(1,'vamsi');
+        m.set(2,"gopi");
+        m.set(3,'manglagiri');
+        m.set(4,'gampalagudem');
+        console.log(m.get(1));//we can access only by key value cant by value
+        console.log(m.delete(4));//same as get we cant delete by value but we can by key
+        console.log(m);
+        console.log('deleteing:'+m.delete(1));
+        console.log(m.size)
+
+        //array to map
+        // Array
+let myArray = [
+['key1', 'value1'],
+['key2', 'value2'],
+['key3', 'value3']
+];
+
+// Convert array to map
+let myMap = new Map(myArray);
+
+console.log(myMap);
+  
+
+//map to array
+// Map
+let myMap2 = new Map([
+  ['key1', 'value1'],
+  ['key2', 'value2'],
+  ['key3', 'value3']
+]);
+
+// Convert map to array using Array.from
+let newArray = Array.from(myMap2);
+
+console.log(newArray);
+
+console.log('map to set')
+// Map
+let myMap3 = new Map([
+  ['key1', 'value1'],
+  ['key2', 'value2'],
+  ['key3', 'value3']
+]);
+
+// Convert Map keys to a Set
+let keySet = new Set(myMap3.keys());
+
+console.log(keySet);
+
+  
+
+// Map
+let myMap4 = new Map([
+  ['key1', 'value1'],
+  ['key2', 'value2'],
+  ['key3', 'value3']
+]);
+
+// Convert Map entries to a Set
+let entrySet = new Set(myMap4.entries());
+
+console.log(entrySet);
+
+//set to map
+// Set
+let mySet6 = new Set([1, 2, 3, 4, 5]);
+
+// Convert Set values to a Map
+let myMapy = new Map([...mySet6].map(value => [value, value]));
+
+console.log(myMapy);
+
+ 
+
+// Set
+let mySetw = new Set(['apple', 'orange', 'banana']);
+
+// Convert Set values to a Map with a fixed value for each key
+let myMapw = new Map([...mySetw].map(value => [value, 'default_value']));
+
+console.log(myMapw);
+
+    </script>
+    
+</body>
+</html>

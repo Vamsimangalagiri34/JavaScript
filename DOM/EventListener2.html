@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventListener2</title>
+    <style>
+        .divm {
+            display: flex;
+            margin: 20px;
+        }
+        .divm ul {
+            display: flex;
+            margin-left: 20px;
+        }
+        ul li:hover{
+            color: red;
+        }
+        .divm ul li {
+            padding: 8px;
+            list-style: none;
+            margin-left: 20px;
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tli{
+            border: 2px solid palevioletred;
+            padding: 8px;
+            margin-left:10px ;
+            list-style: none;
+        }
+        .time-slots{
+             display:flex;
+        }
+    </style>
+</head>
+<body>
+    <script>
+     // Create days list and elements
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
+const divm = document.createElement('div');
+divm.className = 'divm';
+const ol = document.createElement('ul');
+var li;
+// Loop through days and create li elements
+for (var i = 0; i < days.length; i++) {
+    li = document.createElement('li');
+    li.innerText = days[i];
+    li.addEventListener('click', dateF); // Add event listener to each li
+    ol.append(li);
+}
+
+// Append days list to the body
+const bd = document.querySelector('body');
+divm.append(ol);
+bd.append(divm);
+           
+let selectedDay = null; // Track the selected day
+
+// Function to handle the click event
+function dateF() {
+    const selected = this.innerText; // Get the text of the clicked element
+         
+    // Clear the previously displayed time slots
+    const previousTimeSlots = document.querySelector('.time-slots');
+    if (previousTimeSlots) {
+        previousTimeSlots.remove();
+        
+    }
+
+    if (selectedDay !== selected) {
+        selectedDay = selected; // Update the selected day if it's different
+        switch(selected){
+        case 'Sun':
+        var t = ['10:00 AM', '2:15 PM', '5:00 PM', '8:30 PM', '11:45 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+        case 'Mon':
+        var t = ['10:30 AM', '2:35 PM', '5:30 PM', '8:35 PM', '11:55 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+        case 'Tue':
+        var t = ['10:05 AM', '2:15 PM', '5:20 PM', '8:30 PM', '11:45 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+        case 'Thur':
+        var t = ['10:30 AM', '2:35 PM', '5:30 PM', '8:31 PM', '11:35 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+        case 'Fri':
+        var t = ['10:00 AM', '2:15 PM', '5:10 PM', '8:30 PM', '11:25 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+        case 'Sat':
+        var t = ['10:34 AM', '2:25 PM', '5:30 PM', '8:31 PM', '11:45 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+        case 'Wed':
+        var t = ['10:34 AM', '2:35 PM', '5:30 PM', '8:30 PM', '11:45 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
+const divm = document.createElement('div');
+divm.className = 'divm';
+const ol = document.createElement('ul');
+var li;
+// Loop through days and create li elements
+for (var i = 0; i < days.length; i++) {
+    li = document.createElement('li');
+    li.innerText = days[i];
+    li.addEventListener('click', dateF); // Add event listener to each li
+    ol.append(li);
+}
+
+// Append days list to the body
+const bd = document.querySelector('body');
+divm.append(ol);
+bd.append(divm);
+           
+let selectedDay = null; // Track the selected day
+
+// Function to handle the click event
+function dateF() {
+    const selected = this.innerText; // Get the text of the clicked element
+         
+    // Clear the previously displayed time slots
+    const previousTimeSlots = document.querySelector('.time-slots');
+    if (previousTimeSlots) {
+        previousTimeSlots.remove();
+        
+    }
+
+    if (selectedDay !== selected) {
+        selectedDay = selected; // Update the selected day if it's different
+        switch(selected){
+        case 'Sun':
+        var t = ['10:00 AM', '2:15 PM', '5:00 PM', '8:30 PM', '11:45 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+        case 'Mon':
+        var t = ['10:30 AM', '2:35 PM', '5:30 PM', '8:35 PM', '11:55 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+        case 'Tue':
+        var t = ['10:05 AM', '2:15 PM', '5:20 PM', '8:30 PM', '11:45 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+        case 'Thur':
+        var t = ['10:30 AM', '2:35 PM', '5:30 PM', '8:31 PM', '11:35 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+        case 'Fri':
+        var t = ['10:00 AM', '2:15 PM', '5:10 PM', '8:30 PM', '11:25 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+        case 'Sat':
+        var t = ['10:34 AM', '2:25 PM', '5:30 PM', '8:31 PM', '11:45 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+        case 'Wed':
+        var t = ['10:34 AM', '2:35 PM', '5:30 PM', '8:30 PM', '11:45 PM'];
+        var tul = document.createElement('ul');
+        tul.className = 'time-slots'; // Add a class for easy identification and removal
+
+        // Loop through times and create li elements for time slots
+        for (var i = 0; i < t.length; i++) {
+            var tli = document.createElement('li');
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+    }
+}
+}
+            tli.className='tli';
+            tli.innerText = t[i];
+            tul.append(tli);
+        }
+        bd.append(tul); // Append the list of time slots to the body
+        break;
+    }
+}
+}
+
+
+    </script>
+    function toggleSeat(seat) {
+        seat.classList.toggle('selected');
+      }
+      
+         function toggleDates(element) {
+          // Remove 'selected' class from all divs
+          const allDivs = document.querySelectorAll('.d');
+          allDivs.forEach(div => {
+            div.classList.remove('selected');
+          });
+      
+          // Add 'selected' class to the clicked div
+          element.classList.add('selected');
+        }
+</body>
+</html>

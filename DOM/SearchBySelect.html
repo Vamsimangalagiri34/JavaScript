@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SearchBySelect</title>
+</head>
+<body>
+    <div class="selet">
+        <select id="selt" rows="3" onchange="validate()">
+            <option value="" disabled selected>select a location</option>
+            <option value="vijayawada">vijayawada</option>
+            <option value="vizag">vizag</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="chennai">chennai</option>
+            <option value="Bangaloore">Bangaloore</option>
+            <option value="Bangaloore2">Bangaloore2</option>
+        </select>
+    </div>
+    <script>
+        function validate() {
+            var sel = document.getElementById("selt").value;
+            console.log(sel);
+        }
+    </script>
+</body>
+</html>

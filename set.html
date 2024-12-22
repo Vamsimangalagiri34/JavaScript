@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set</title>
+</head>
+<!-- Common Operations:
+
+add(value): Adds a unique value to the set.
+delete(value): Removes a value from the set.
+has(value): Checks if a value is present in the set.
+size: Returns the number of elements in the set. --> it is like s.size
+<body>
+    <script>
+        let s=new Set([1, 2, 3, 4, 5]);
+        s.add("vamsi");
+        console.log(s.add("mangalagiri"));
+        console.log(s.add(21));//gives the added set
+       console.log( s.delete(1))//true
+       console.log( s.delete(33))//false
+       console.log(s.has('vamsi'));
+        console.log(s);
+        console.log(s.size);
+
+
+
+        // Iterating over the elements in the Set
+s.forEach(value => {
+    console.log(value);
+  });
+
+  //converting array to set
+  // Array
+let myArray = [1, 2, 3, 4, 5];
+
+// Convert array to set
+let mySet = new Set(myArray);
+
+console.log(mySet);
+
+
+
+//converting set to array
+
+// Set
+let mySet2 = new Set([1, 2, 3, 4, 5]);
+
+// Convert set to array using spread syntax
+let newArray = [...mySet2];
+
+console.log(newArray);
+
+
+
+    </script>
+</body>
+</html>

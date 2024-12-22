@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Example</title>
+    <style>
+        body{
+            background-color: black;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="form1">
+        <input type="text" id="name">
+        <input type="button" value="submit" onclick="class1()">
+    </div>
+    <script>
+        function class1(){
+            var name = document.getElementById("name").value;
+
+            class Vamsi {
+                constructor(name) {
+                    this.name = name;
+                }
+                nam() {
+                    const n = this.name;
+                    return n;
+                }
+            }
+            const cl = new Vamsi(name);
+            console.log(cl.nam());
+            setTimeout(()=>{
+                console.log("Advance Happy Diwali")
+            },3000)
+        }
+        let car={
+            brand:'a',
+            model:'v'
+        }
+        car.__proto__.det=function(){
+            return 'vamsi';
+        }
+        car.__proto__man='male';
+        console.log(car);
+        car.firstName='vamsi m';
+        console.log(car.det(),car.__proto__man);//Prototypes are the basis of JavaScript's inheritance model, allowing objects to share and inherit functionality, promoting code reusability and efficiency.
+    </script>
+</body>
+</html>

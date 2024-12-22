@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Error Example</title>
+</head>
+<body>
+    <script>
+        class CustomError extends Error {
+            constructor(msg) {
+                super(msg);
+                this.name = "CustomError";
+            }
+        }
+
+        try {
+            // Throwing a custom error
+            throw new CustomError("Failed to execute operation");
+        } catch (error) {
+            // Catch block to handle the custom error
+            console.error('Caught a custom error:', error.message);
+            console.error('Error name:', error.name); // Accessing the custom error name
+        }
+    </script>
+</body>
+</html>

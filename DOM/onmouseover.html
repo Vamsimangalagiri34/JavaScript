@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Combined Events Example</title>
+  <style>
+    #keyPressInput {
+      margin-bottom: 10px;
+    }
+    #mouseArea {
+      width: 200px;
+      height: 100px;
+      background-color: lightgray;
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+<body onload="onPageLoad()">
+
+<input type="text" id="keyPressInput" onkeydown="detectKeyPress(event)">
+<p id="displayKeyPressed">Press a key to see its code.</p>
+
+<div id="mouseArea" onmouseover="mouseOver()" onmouseout="mouseOut()">
+  Hover over this area
+</div>
+<p id="mouseEventDisplay">Mouse event will display here</p>
+
+<script>
+  function detectKeyPress(event) {
+    const keyPressed = event.keyCode;
+    document.getElementById("displayKeyPressed").innerText = `Key pressed: ${keyPressed}`;
+  }
+
+  function onPageLoad() {
+    alert('The page has finished loading!');
+    // You can add more actions here that you want to occur after the page loads.
+  }
+
+  function mouseOver() {
+    document.getElementById("mouseArea").style.backgroundColor = "lightblue";
+    document.getElementById("mouseEventDisplay").innerText = "Mouse entered the area";
+  }
+
+  function mouseOut() {
+    document.getElementById("mouseArea").style.backgroundColor = "lightgray";
+    document.getElementById("mouseEventDisplay").innerText = "Mouse left the area";
+  }
+</script>
+
+</body>
+</html>

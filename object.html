@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object examples</title>
+</head>
+<body>
+    <body>
+        <script>
+            document.write("im from object");
+            var obj={
+                name:"vamsi"
+                ,
+                village:"sobbala",age:"21",fname:"murali mohan Rao",mname:"sirisha",sistername:"mounika",
+                Duty:function duty(){
+                    console.log("farmer");
+                },
+                mduty:function mduty(){
+                    console.log("house maker");
+                },
+                sduty:()=>{
+                    console.log("im studing not at working");
+                }
+            }
+           // Your original code is a  type of variable >objects have key value pair
+var a = obj.age;
+var f = (a) => {
+    console.log(a);
+}
+            document.write("<br>"+obj.name);
+            document.write("<br>"+obj.village);
+            document.write("<br>"+obj.village);
+            console.log(obj.Duty());
+            document.write("<br>"+obj.name);
+            console.log(obj.Duty());
+            console.log(obj.Duty());
+            console.log(obj.Duty);//we have to call the duty function by using () why because it storing the function
+            console.log(obj.mduty());
+            console.log(obj.sduty());
+            console.log(f(a)); 
+            setTimeout (
+                function great(){
+                    console.log("hello im exicuted after 3s later")
+                },3000);
+            setInterval(
+             function great2(){
+                console.log("im from great2 i will exicute every 5s later:)")
+             }   ,5000
+            );
+            //we can access the objrct by using . notation and bracket notation
+            //obj.name or obj['name']
+            //we can assign the obejct value like 
+            const ob={
+                name:'vamsi'
+            }
+            console.log(ob);
+            console.log(ob.name)
+            ob['name']='gopi'
+            console.log(ob);
+            //combinedng two objects
+            let obj1 = { a: 1, b: 2 };
+let obj2 = { b: 3, c: 4 };
+
+let combinedObject = Object.assign({}, obj1, obj2);
+console.log(combinedObject);
+
+const obj={'name':'vamsi',
+  'age':21,
+  'obj2':{'nam2':'vamsi2','age2':21},
+  'marks':[99,95,90,100]
+}
+  console.log(obj.obj2.nam2)
+  console.log(obj.marks[0])
+        </script>
+    </body>
+</body>
+</html>

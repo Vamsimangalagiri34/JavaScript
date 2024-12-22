@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calback2</title>
+</head>
+<!-- 
+Exactly! In JavaScript, asynchronous operations are those that don't block the execution of the rest of the code. Instead, they are scheduled to run after a certain time, after the completion of an I/O operation (like reading a file or making a network request), or in response to an event. -->
+<body>
+    <script >
+        function task1(t2){
+            console.log('im from task1')
+            t2();
+        }
+        function task2(t1){
+            console.log('im form task2')
+        }
+        const t2=task2;
+        const t1=task1;
+        task1(t2)
+    </script>
+</body>
+</html>

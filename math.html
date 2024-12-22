@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math</title>
+</head>
+<body>
+    <!-- Math.floor(): Rounds down to the nearest integer. -->
+    <!-- Math.ceil(): Rounds up to the nearest integer. -->
+    <!-- Math.round(): Rounds to the nearest integer. -->
+    <!-- Math.max() and Math.min(): Returns the maximum or minimum value from a set of  -->
+    <!-- Math.abs(): Returns the absolute (positive) value of a number. -->
+    <!-- Math.random(): Generates a random floating-point number between 0 (inclusive) and 1  -->
+    <!-- Math.pow(): Raises a number to a specified power. -->
+    <!-- Math.sqrt(): Calculates the square root of a number. -->
+    <!-- Math.PI and Math.E: Constants representing the value of pi (π) and Euler's number (e). -->
+    <!-- The toFixed() method converts a number into a string, rounding the number to a specified number of decimal places (in this case, 2) and returns a string representation of the rounded number. -->
+<!-- Remember, toFixed() returns a string, so if you need to perform further calculations or use the result as a number, you might need to convert it back to a number type using parseFloat() or Number() -->
+    <script>
+        <!-- JavaScript is facilitated by the Math object, which provides a range of methods for performing mathematical operations. --> 
+        
+        console.log(Math.floor(354.56)); // Output: 354
+        console.log(Math.ceil(3.1)); // Output: 5
+        console.log(Math.round(4.5)); // Output: 5
+        console.log(Math.abs(-5)); // Output: 5
+        console.log(Math.max(10, 20, 30)); // Output: 30
+        console.log(Math.min(10, 20, 30)); // Output: 10
+        console.log(Math.random()*10000); // Output: Random number between 0 and 1
+        console.log(Math.pow(2, 3)); // Output: 8 (2 raised to the power of 3)
+        console.log(Math.sqrt(9)); // Output: 3
+        console.log(Math.PI); // Output: 3.141592653589793
+        console.log(Math.E); // Output: 2.718281828459045
+        let number = 15.6789;
+let roundedNumber = parseFloat(number.toFixed(2));
+console.log(roundedNumber); // Output: 15.68 (as a number)
+var a='30';
+console.log(typeof a);
+var b=parseFloat(a)
+console.log(typeof b,' ',b)
+    </script>
+</body>
+</html>

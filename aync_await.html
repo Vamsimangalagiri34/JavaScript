@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    function demo() {
+      <!-- // Returns a Promise that resolves after a 2000 milliseconds (2 seconds) timeout
+      Async and Await in JavaScript
+The async and await keywords are used to handle asynchronous code more effectively, making it easier to write and read compared to traditional methods like callbacks or .then() in Promise 
+  
+Async and Await in JavaScript
+The async and await keywords are used to handle asynchronous code more effectively, making it easier to write and read compared to traditional methods like callbacks or .then() in Promises.
+
+Async
+The async keyword is used to declare an asynchronous function.
+An async function always returns a Promise.
+The resolved value of the async function becomes the value returned by the function.
+Await
+The await keyword is used inside an async function to pause execution until the promise resolves.
+It can only be used in an async function.
+It simplifies chaining of asynchronous operations and makes the code look synchronous.
+
+real time examples
+1. Fetching Data from APIs
+Example: A weather app fetching current weather data from an external API.
+Async operations ensure the UI remains responsive while waiting for the API response.
+. Real-Time Chat Applications
+Example: Chat apps like WhatsApp or Slack use async operations to send and receive messages without blocking the UI.
+Async functions handle data streaming over WebSockets
+3. File Uploads and Downloads
+Example: Uploading images or files on platforms like Google Drive.
+Async operations enable progress tracking without freezing the UI.
+javascript
+Copy code
+5. Background Tasks
+Example: Email notifications sent in the background after a user action.
+Async operations ensure that the user doesn’t wait for the task to complete.
+javascript
+Copy code
+
+-->
+      return new Promise(function(resolve, reject) {
+        setTimeout(() => {
+          resolve("done");
+        }, 2000);
+      });
+    }
+    
+    async function fetchData() {
+      try {
+        // Await the resolution of the Promise returned by the demo() function
+        const result = await demo();
+    
+        // Log the resolved data to the console
+        console.log(result);
+      } catch (error) {
+        // Handle any errors that may occur during the Promise resolution
+        console.error("Error:", error);
+      }
+    }
+    
+    // Call the asynchronous function fetchData()
+    fetchData();
+    
+  </script>
+</body>
+</html>

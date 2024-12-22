@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<style>
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .v{
+background-color: rgb(14, 104, 146);
+border-radius: 30px;
+margin:10px;
+display: inline-block;
+padding: 50px;
+    }
+    .v1{
+        display:flex;
+        flex-direction:column;
+    }
+    .v1 label{
+        margin-top: 2px;
+    }
+    body {
+    background: 
+        linear-gradient(to right,  black 40%,rgb(122, 189, 251) );
+}
+
+/* ... Your other CSS styles remain unchanged ... */
+
+</style>
+<body>
+    <div class="v">
+        <div class="v1">
+            <label><input type="text" placeholder="enter first name" id="name1" > </label>
+            <label><input type="text" placeholder="enter last name" id="name2"></label>
+            <label><input type="checkbox" id="j">java</label>            
+            <label><input type="checkbox" id="p">python</label>            
+            <label><input type="checkbox" id="cpp">c++</label>            
+            <label><input type="checkbox" id="js">javascript</label>
+            <label><input type="radio" id="m" name="gender">male</label>
+            <label><input type="radio" id="fm" name="gender">female</label>
+            <label><select id="selec">
+                <option value="" disabled selected>Select a location</option>
+                <option value="vijayawada">vijayawada</option>                
+                <option value="vizag">vizag</option>                
+                <option value="hyderabad">hyderabad</option>                
+            </select></label>
+            <label><textarea placeholder="address" rows="4" id="txta"></textarea></label> 
+            <label><button onclick="validate()">login</button></label>                       
+        </div>
+    </div>
+    <p id="para"></p>
+    <script>
+     function validate(){
+     var name1=document.getElementById("name1").value;
+     var name2=document.getElementById("name2").value;
+     var java=document.getElementById("j").checked;
+     var py=document.getElementById("p").checked;
+     var js=document.getElementById("js").checked;
+     var cpp=document.getElementById("cpp").checked;
+     var m=document.getElementById("m").checked;
+     var fm=document.getElementById("fm").checked;
+     var txt=document.getElementById("txta").value;
+     var selet=document.getElementById("selec").value;
+     console.log(name1);
+     console.log(name2);
+     console.log(java?"java":"");
+     console.log(py?"python":"");
+     console.log(cpp?"c++":"");     
+     console.log(js?"c++":"");     
+     console.log(m?"male":"");
+     console.log(fm?"female":"");
+     console.log(txt);
+     console.log(selet);
+     }
+    </script>
+</body>
+</html>

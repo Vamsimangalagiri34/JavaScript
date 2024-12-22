@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles2.css">
+  <title>Seat Booking</title>
+  <style>
+    body{
+    background:linear-gradient(to right,black,#3D405B);
+    }
+   .dates{
+    display:flex;
+    }
+    .d{
+       display:inline-block;
+      padding:5px;
+      border:.3px solid gray;
+      margin:3px;
+      border-radius:5px ;
+      font-weight:500;
+      font-size:20px;
+      color:#ecc18e;
+      font-style:inter,sens-serif;
+    }
+     .selected{
+    background-color:#00B8F5;
+    color:white;
+    }
+    .daysInfo ol li{
+    list-style:none;
+    color:white;
+    }
+    .daysInfo ol li:hover{
+    background:linear-gradient(to left,black,yellow);
+    }
+    .daysInfo{
+    margin-bottom:10px;
+    }
+    .daysInfo .dlo{
+    display:flex;
+    }
+    .daysInfo .dlo .dli{
+    margin-left:20px;
+    font-size:19px;
+    border:1px solid gray;
+    padding:10px;
+    border-radius:5px;
+    cursor:pointer;
+    }
+    .timeInfo{
+      color: white;
+      display: flex;
+      margin-bottom:29px;
+    }
+    .timeInfo ol{
+      display: flex;
+      font-size: 16px;
+      margin-left:27px;
+    }
+    .timeInfo ol li{
+    cursor:pointer;
+      list-style: none;
+      display: flex;
+      margin-left: 9px;
+      border-radius: 5px;
+      border: 1px solid gray;
+      padding: 7px;
+    }
+    .seats{
+    color:white;
+    }
+    .seats p{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    }
+    .mDtls{
+    width:29rem;
+    height:36.5rem;
+    color:white;
+    background:black;
+    margin-right:5rem;
+    }
+    .mDtls img{
+    height:75%;
+    width:100%;
+    }
+    .vam{
+    border:2px solid black;
+    padding:20px;
+    border-radius:5px;
+        background:linear-gradient(to right,black,#3D405B);
+        }
+  </style>
+</head>
+<body>
+
+<div id="locationInfo" style="display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:790;font-style:25 inter,sans-serif'">
+  <!-- The selected location will be displayed here -->
+</div>
+<div class="daysInfo">
+
+</div>
+<div class="timeInfo">
+
+</div>
+
+<div class="vam" style="display:flex;align-items:center;justify-content:center">
+  <div class="theater" style="border-radius:6px;">
+    <h2 style="background:linear-gradient(to right,white,gray);padding-left:30px;border-radius:40px;border:1px solid #00B8F5">Screen This Way</h2>
+    <div class="room">
+
+      <div class="seats" id="seats-container" style="margin-top:20px;">
+        <!-- Generate 60 seats in a 6x10 grid -->
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
+<script>
+  var dayloc='';
+  var tim=false;
+  var sId='';
+  // Retrieve the location from localStorage
+  var storeImgSrc=localStorage.getItem('img-src');
+  var storedLocation = localStorage.getItem('location');
+  if (storedLocation) {
+      var locationInfo = document.getElementById('locationInfo');
+      locationInfo.textContent = storedLocation+storeImgSrc;
+
+  } else {
+      // Handle case when no location is stored
+      console.log('No location stored.');
+  }
+
+const seatContainer = document.getElementById('seats-container');
+const numRows = 10; // Number of rows
+const numCols = 14; // Number of columns
+const numSeats = numRows * numCols;
+
+// Generate seats and row labels
+for (let i = 0; i < numRows; i++) {
+  const rowLabel = String.fromCharCode('A'.charCodeAt(0) + i); // Get the character for each row
+
+  // Create a row container for each row
+  const row = document.createElement('div');
+  row.className = 'row';
+
+  // Create a div for the row label
+  const label = document.createElement('div');
+  label.className = 'row-label';
+  label.innerText = rowLabel + '-';
+  // Append the label to the row container
+  row.appendChild(label);
+
+  // Generate seats for the row
+  for (let j = 1; j <= numCols; j++) {
+      const seat = document.createElement('div');
+      seat.className = 'seat';
+
+      // Set seat ID and text with row label and column number
+      seat.id =  rowLabel + '-' + j ;
+      seat.innerText = j;
+
+      seat.addEventListener('click', () => toggleSeat(seat));
+
+      // Add margin after every seat except the last one in the row
+      if (j !== numCols) {
+          seat.style.marginRight = '5px';
+      }
+
+      // Append each seat to the row container
+      row.appendChild(seat);
+
+      // Check for the 9th row and the 6th column to add the "Gold" label horizontally
+      for(let i=1;i<=14;i++){
+           if(i==1 && j==4 || (i==5 && j==10) || (i==11 && j==14)){
+          const goldLabel = document.createElement('div');
+          goldLabel.className = 'str1-horizontal';
+          goldLabel.innerHTML = "__";
+          row.appendChild(goldLabel);
+
+  }
+}
+}
+if (i === 8) {
+const goldLabel = document.createElement('div');
+goldLabel.className = 'str1';
+goldLabel.innerHTML = "--- Gold ---";
+goldLabel.style.color='white';
+seatContainer.appendChild(goldLabel);
+}
+
+if(i==4){
+const normal=document.createElement('div');
+normal.className="str2";
+normal.innerHTML='--- Exclusive ---';
+normal.style.color='white';
+seatContainer.appendChild(normal);
+}
+  // Append the row container (with row label and seats) to the seat container
+  seatContainer.appendChild(row);
+}
+
+
+<!--               ticket Details                  -->
+
+  var mDtls=document.createElement('div');
+  mDtls.classList.add('mDtls');
+  const tDtls=document.createElement('div');
+  tDtls.classList.add('tDtls');
+  const p1=document.createElement('p');
+  p1.innerHTML='Tickets Count:'+`${20}`;
+  const p4=document.createElement('p');
+  p4.innerHTML='     Normal: '+`${20} `+'  Exclusive:  '+`${5}`+' Gold: '+`${0}`;
+  const p2=document.createElement('p');
+  p2.innerHTML='Tickets Price:'+`${2222}`;
+  p2.classList.add('p2');
+  const p3=document.createElement('p');
+  p3.innerHTML='Selected Seats:'+`${6}`;
+  tDtls.append(p1,p2,p4,p3);
+  mDtls.append(tDtls);
+
+
+
+console.log(p2.innerHTML+7);
+var dhee=document.createElement('div');
+dhee.classList.add('dhee');
+function toggleSeat(seat) {
+  seat.classList.toggle('selected');
+  console.log(seat.id);
+  sId=seat.id;
+
+   sids=fun2(sId);
+  var msg=document.createElement('p');
+  if(sids.length<=1){
+  const d2=document.createElement('div');
+msg.innerHTML=sids;
+d2.append(msg);
+dhee.append(d2);
+console.log(d2.previousSibling);
+}
+else{
+const d2=document.createElement('div');
+msg.innerHTML=sids;
+d2.append(msg);
+dhee.append(d2);
+console.log(d2.previousSibling.remove());
+if(sids.length>6){
+alert('you can select only 6 seats at a time!');
+if(sids.length>6){
+msg.style.visibility:hidden;
+}
+}
+
+mDtls.append(dhee);
+<!--  dayloc;-->
+}
+}
+var sids=[];
+  var room=document.querySelector('.vam');
+  const srcimg=document.createElement('img');
+  srcimg.src= "movies-imgs/"+storeImgSrc;
+  mDtls.prepend(srcimg);
+
+  room.prepend(mDtls);
+
+   function toggleDates(element) {
+    // Remove 'selected' class from all divs
+    const allDivs = document.querySelectorAll('.d');
+    allDivs.forEach(div => {
+      div.classList.remove('selected');
+    });
+
+    // Add 'selected' class to the clicked div
+    element.classList.add('selected');
+    timings();
+  }
+  function timings(){
+  var t1=document.createElement('div');
+      t1.className='timings';
+      t1.innerText='ti im';
+  }
+  function days(){
+  const dayz=document.querySelector('.daysInfo ');
+  daylist=['Mon','Tue','Wed','Thur','Fri','Sat','Sun'];
+  const datel=['13','14','15','16','17','18','19'];
+  var dlo=document.createElement('ol');
+  dlo.classList.add('dlo');
+  for(let i=0;i<daylist.length && i<datel.length ;i++){
+  var dli=document.createElement('li');
+  dli.innerHTML=daylist[i]+datel[i];
+  dli.addEventListener('click',function(){
+  console.log(this.innerHTML);
+  dayloc=this.innerHTML;
+  fun1(dayloc);
+  });
+  dli.classList.add('dli');
+  dlo.append(dli);
+  }
+  dayz.append(dlo);
+  console.log(dli);
+}
+days();
+ const timez={
+Mon13:['6:30AM','9:25AM','12:25PM','3:11PM','5:30PM','8:15PM','11:15PM'],
+Tue14:['6:35AM','9:55AM','12:37PM','3:12PM','5:35PM','8:45PM','11:25PM'],
+Wed15:['6:40AM','9:25AM','12:40PM','3:18PM','5:32PM','8:35PM','11:35PM'],
+Thur16:['6:50AM','9:15AM','12:37PM','3:25PM','5:50PM','8:15PM','11:55PM'],
+Fri17:['6:20AM','9:25AM','12:40PM','3:45PM','5:20PM','8:55PM','11:35PM'],
+Sat18:['6:30AM','9:55AM','12:20PM','3:10PM','5:40PM','8:35PM','11:25PM'],
+Sun19:['6:10AM','9:35AM','12:60PM','3:15PM','5:10PM','8:45PM','11:15PM'],
+ }
+function fun1(dayloc){
+  const tInfo=document.querySelector('.timeInfo');
+  const tol=document.createElement('ol');
+  tol.classList.add('tol');
+  for(let i=0;i<timez[dayloc].length;i++){
+    var tli=document.createElement('li');
+    tli.innerHTML=timez[dayloc][i];
+    console.log(timez[dayloc][i]);
+    tol.append(tli);
+  }
+  tInfo.append(tol);
+  console.log('previous element'+tol.previousElementSibling.remove());
+}
+const lis=[];
+  const seatCost=document.querySelector('.seats');
+  const seatP=document.createElement('p');
+  seatP.innerHTML='Normal: 140 Exclusive: 170      Gold:250';
+  seatCost.append(seatP);
+
+  function fun2(sId){
+  lis.push(sId);
+    return lis;
+  }
+</script>

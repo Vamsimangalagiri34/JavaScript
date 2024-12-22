@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+     function demo(){
+       var p=fetch()
+       console.log(p);
+       return p;
+     }
+       
+    async function tri(){
+        try {
+            const obj = await demo();
+            console.log(obj);  // Directly log the resolved value
+        } catch (d) {
+            console.log(d);  // Handle rejection here
+        }
+    }
+
+    tri();
+    </script>
+</body>
+</html>

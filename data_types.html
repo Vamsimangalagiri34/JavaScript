@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data types</title>
+</head>
+<!-- here are 7 types of primitive data types  -->
+<!-- 3 types of reference types 
+objects
+array
+function
+-->
+<!-- in js data type is dynmaicaly changed so we can assign df data types to a same vaialbe -->
+<body>
+    <script>
+        
+        <!-- String -->
+        <!-- String is collection of characters a string is ends or starts with ' or "" '-->
+        <!-- Number it represent integer and floating points number -->
+        let n=34;
+        let n2=45.35;
+        let n1=34;
+        console.log(n1);
+        console.log(n2)
+        let n3=45.00;
+        console.log(n3);
+        <!-- it will return 45 it treated as a number to use less memeory if we want to get points we can convert it into sstring or using by .toFixed() -->
+    console.log(typeof n2);
+    <!-- Boolean -->
+    
+    let v=false;
+
+    <!-- undefined when we declare a variable but not assign any value whrn fetch the variable than we get result as undefined or mising the value-->
+
+<!-- undefined usually indicates an unintentional absence of a value, such as when a variable is declared but not assigned.
+    null typically represents a deliberate absence of an object or value, indicating that no object is assigned or that a property intentionally has no value.
+    It's worth noting that both undefined and null are falsy values in JavaScript, which means they evaluate to false in a boolean context. Additionally, comparing them with the equality operator (==) without type-checking (===) may result in true, as undefined == null evaluates to true. -->
+    console.log("the type of null is object it was an known bug in js the both undefined and null boolean values are flase when we compare both it returns true");
+
+
+    <!-- BigInt -->
+    const regularNumber = 123;
+    const bigIntNumber = 123n;
+    
+    In JavaScript, when you append an n or N to the end of a numeric literal, it signifies that the literal is a BigInt. The BigInt type was introduced in ECMAScript 2020 (ES11) to handle arbitrary-precision integers, allowing developers to work with integers beyond the safe integer limit imposed by regular JavaScript numbers.
+    Arbitrary-precision integers, often referred to simply as "arbitrary-precision numbers" or "bignumbers,
+
+
+    <!--Symbol  it was used to create for unique variables  -->
+
+
+    function fun(){
+        console.log(typeof fun());//type is function
+    }
+
+    </script>
+    
+</body>
+</html>

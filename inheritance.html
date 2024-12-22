@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+    <script>
+        class OneC{
+            static PI=3.147
+           static pivalue(PI){
+           return PI;
+            }
+        }
+        const q=new OneC();
+        console.log(OneC.pivalue(3.14))
+        console.log(OneC.PI)
+        console.log('---------------------------------------------------');
+         <!--                                                         -->
+        console.log('im from single inheritance nice to meet you here and what about u')
+        class One{
+             one(){
+             console.log("im from one class");
+            }
+        }
+        class Two extends One{
+         two(){
+            console.log("im from two class");
+         }
+        }
+        const o=new Two();
+        o.two()
+        o.one()
+        console.log('---------------------------------------------------');
+       
+    </script>
+</body>
+</html>

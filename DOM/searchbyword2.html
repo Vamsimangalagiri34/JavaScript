@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search by Word</title>
+    <style>
+        .sug {
+            border: 2px solid black;
+            padding: 5px;
+            margin-top: 5px; /* Added margin top to separate suggestions */
+            background-color: #f0f0f0; /* Added background color for better visibility */
+            width: inherit; /* Set width to be the same as the parent element (input box) */
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="int" onkeyup="finds()">
+    <div id="results" class="sug"></div> <!-- Container to display search results -->
+    <script>
+        var arr = ['vamsi', 'kalki', 'remo', 'alert'];
+        var resultsDiv = document.getElementById("results");
+
+        function finds() {
+            var v = document.getElementById("int").value;
+            var suggestions = ''; // Variable to store concatenated suggestions
+
+            if (v.length !== 0) {
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i].includes(v)) { // Check if array element contains the input value
+                        suggestions += '<div class="sug">' + arr[i] + '</div>'; // Concatenate suggestion div
+                    }
+                }
+            }
+
+            // Set innerHTML of resultsDiv to concatenated suggestions
+            resultsDiv.innerHTML = suggestions;
+
+            // Show/hide suggestions based on input value
+            resultsDiv.style.display = v.length !== 0 ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

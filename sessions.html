@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions</title>
+</head>
+<!-- local session available for any where we can use it -->
+<!-- session storage it can use the data at that tab only if we close the tab the data will be lose -->
+<body>
+    <button> <a href='D:\5i9\JavaScript\sessions2.html'>clicl</a></button>
+    <img src="C:\Intellij Projects\webproject2\src\main\webapp\movies-imgs\animal.jpeg">
+    <script>
+        localStorage.setItem('name','vamsi');
+         localS2=sessionStorage.setItem('name2','vamsi2')
+        var localS=localStorage.getItem('name'); 
+        console.log(localS);
+var loc= sessionStorage.getItem('name2');
+console.log(loc);
+    </script>
+</body>
+</html>

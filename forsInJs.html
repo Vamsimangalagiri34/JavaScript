@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forInJs</title>
+</head>
+<body>
+    <script>
+    for(var i=1;i<5;i++){
+   console.log(i);
+    }
+    for(let j in 10){
+        console.log(j);
+    }
+    const ar=[56,3,4,5,7,46,74,74];
+    for(let i=0;i<ar.length;i++){
+        console.log(ar[i]);
+    }
+    arr=[89,88,68,68,5];
+    for(let j in arr){
+        console.log(arr[j]);
+    }
+    a=[9,5,43,4,5,35]
+    for(const j of a){
+        console.log(j);
+    }
+    var su=0;
+    for(let h of a){
+         su=su+h;
+    }
+    console.log(su)
+</script>
+</body>
+</html>

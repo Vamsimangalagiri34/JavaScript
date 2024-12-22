@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exceptions in js</title>
+</head>
+<body>
+    <script>//there is no throws keyword in js but in java
+        try {
+            // Intentionally throwing an error
+            console.log('from try block')
+            throw new Error("An intentional error occurred");
+            console.log("This line will not be executed");
+        } catch (err) {
+            console.log('Catch block:', err.message);
+        } finally {
+            console.log("Finally block");
+        }
+    </script>
+</body>
+</html>

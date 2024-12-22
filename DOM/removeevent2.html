@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>empty</title>
+    <style>
+        .vams {
+            height: 95px;
+            width: 95px;
+            border: 2px solid black;
+            background-color: black;
+        }
+
+        body {
+            height: 400px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const bd = document.querySelector('body');
+        const p = document.createElement('div');
+        p.classList.add('vams');
+
+        function toggleColor() {
+            p.style.background = 'red';
+            p.removeEventListener('click', toggleColor);
+            p.addEventListener('click', revertColor);
+        }
+
+        function revertColor() {
+            p.style.background = 'black';
+            p.removeEventListener('click', revertColor);
+            p.addEventListener('click', toggleColor);
+        }
+
+        p.addEventListener('click', toggleColor);
+
+        bd.append(p);
+    </script>
+</body>
+</html>

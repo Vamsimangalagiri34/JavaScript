@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manipulating elements</title>
+</head>
+<body>
+    <div class="cat">
+        <h1>hello meow</h1>
+
+    </div>
+    <ul id="list">
+        <li>name</li>
+        <li>age</li>
+        <li>number</li>
+    </ul>
+    <script>
+        
+        var g=document.createElement("div");
+        g.innerHTML="hell0 bawoo!";
+        console.log(g);
+        document.body.appendChild(g);
+        //in the above just we create an element we can also add there id and class name
+        g.className="dog";
+    var sam=document.getElementById("list");
+   let lis=document.createElement("li");
+   lis.innerHTML="address";
+   sam.appendChild(lis);
+    </script>
+</body>
+</html>

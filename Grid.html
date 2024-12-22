@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout</title>
+    <style>
+        /* Define the grid container */
+        .grid-container {
+            display: grid;
+            /*1 fr means it divides the spcae  into fraction 2fr means it divides the space into 2 fractions                 */
+            /*grid-template-columns :_ _ _ ->     3 column boxes size wil be applied            */
+            grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+            gap: 10px; /* Space between grid items */
+            grid-template-rows: auto; /* Rows adjust automatically based on content */
+            /*grid-auto-rows:400px  it will apllie the row size autoly
+            same as grid-auto-column*/ 
+            padding: 10px;
+        }
+
+        /* Style the grid items */
+        .grid-item {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            grid-row:1/4;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
+    </div>
+</body>
+</html>

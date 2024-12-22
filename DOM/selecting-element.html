@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body id="b">
+    <!--DOM is arcomy of document object model
+    is used to manipulate the html object
+    is used to change the document structure,style,and content.-->
+    <div class="vam">
+        <p>
+            <h2 id="k">vamsi</h2>
+        </p>
+    </div>
+    <div>
+        <h1 class="krish">first heading</h1>
+        <h2>second heading</h2>
+        <h2>third heading</h2>
+        <h3>third heading</h3>
+    </div>
+    <h3 id="w"></h3>
+    <script>
+        var v = document.getElementById("k");
+        var w = document.getElementById("w");
+        w.innerHTML = v; // Setting the innerHTML of 'w' to "v"
+        console.log(v);     
+        var a=document.getElementsByTagName("h2");
+        console.log(a);
+        var s=document.getElementsByClassName("krish");
+        console.log(s);
+        var m=document.querySelector(".krish");//it use css selectors to  modify the data but it take only first element if they have multiple same  tag
+        console.log(m);
+        var i=document.querySelectorAll("h2");//it select all the css selectors>
+        console.log(i);
+
+        
+        </script>
+   
+</body>
+</html>

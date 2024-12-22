@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set examples</title>
+</head>
+<body>
+    <div class="form1">
+        <form>
+            <input type="text" id="name">
+            <input type="text" id="eid">
+            <label><input type="checkbox" id="java" >java</label>
+            <label><input type="checkbox" id="c++" >c++</label>
+            <label><input type="checkbox" id="python">python</label>
+            <label><input type="radio" id="male" name="r">male</label>
+            <label><input type="radio" id="female" name="r">female</label>
+            <input type="button" value="submit" onclick="data()">
+        </form>
+        <div id="div2"></div>
+    </div>
+    <script>
+        function data(){
+        var name=document.getElementById("name").value;
+        var eid=document.getElementById("eid").value;
+        var jc=document.getElementById("java").checked;
+        var cp=document.getElementById("c++").checked;
+        var p=document.getElementById("python").checked;
+        var ra=document.getElementById("male").checked;
+        var ra2=document.getElementById("female").checked;
+        console.log(name+eid+(jc ? "java":"")+(cp ? "c++" : "")+ (p ? "python" : "")+(ra ? "male" : "")+(ra2 ? "female" : ""))
+        document.getElementById("div2").innerHTML=name;
+        document.getElementById("div2").innerHTML=eid;
+        document.getElementById("div2").innerHTML=jc ? "java":"";
+        document.getElementById("div2").innerHTML=cp ? "c++" : "";
+        document.getElementById("div2").innerHTML=p ? "python" : "";
+        document.getElementById("div2").innerHTML=ra ? "male" : "";
+        document.getElementById("div2").innerHTML=ra2 ? "female" : "";
+        }
+    </script>
+</body>
+</html>

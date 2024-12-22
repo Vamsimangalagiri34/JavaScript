@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static keyword in javascript</title>
+</head>
+<!-- In JavaScript, the static keyword is used to define a static method or property for a class. 
+    Static members belong to the class itself rather than instances of the class. They can be called or accessed without creating an instance of the class. -->
+<body>
+    <script>
+        class aboutStatic{
+            static pi=3.14;
+            static piValue(){
+                return this.pi;
+            }
+        }
+        console.log(aboutStatic.pi);
+        console.log(aboutStatic.piValue())
+    </script>
+</body>
+</html>

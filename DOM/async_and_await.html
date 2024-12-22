@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async and await</title>
+    <!-- 
+        async and await are used to handle promise
+
+        async it returns a promise 
+
+        if a async function returns a other promise than it will check it was promise or not 
+        if its a promise than retuns the promise it doesnt wrappe a promise into a promise 
+        const p=new Promise((r,j)=>{
+            r('vam');
+        })
+        async function getinfo(){
+            return p;//it does not wrape the promise it just return the orignal promise
+        }
+
+        await is used in async function we write infront of a promisej
+    -->
+</head>
+<body>
+    <script>
+      async  function getData(){
+            return "vamsi";//wrapping data into a promise and return
+        }
+        console.log(typeof getData)
+        const c=getData();
+        console.log(typeof c);//object
+        console.log(c)
+
+
+        const p=new Promise((r,j)=>{
+            r('from r');
+        })
+        async function pan(){
+            //JS engine was waiting for promise resolve resolve means promise get statisified
+             const val= await p;//it stops the hole code its execution after remaing get excuted
+             console.log(val);
+        }
+        pan();
+    </script>
+</body>
+<!-- 
+    Async Function:
+
+When you declare a function with the async keyword, it becomes an asynchronous function.
+An async function always returns a promise, which allows you to use the await keyword inside it.
+ -->
+
+ <!-- When you use await with a promise, 
+    it essentially pauses the execution of the async function until the promise is resolved. The resolved value of the promise is then returned,  -->
+</html>

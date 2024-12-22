@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .container .items:nth-child(2n){
+        background-color: aqua;
+        height: 100px;
+      }
+      .container .items:nth-child(odd){
+        background-color: rebeccapurple;
+        height: 100px;
+      }
+      .container{
+        display: grid;
+        grid-template-columns: 200px 250px;
+       grid-auto-rows: minmax(150px,auto)
+        /*grid-template-rows:100px  120px ;*/
+        
+      }
+      @media (min-width:400px){
+        body{
+            
+            background-color: pink;
+        }
+        *{
+            font-size: 15px;
+        }
+
+
+     }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique est, temporibus voluptates quibusdam id dolores, laborum voluptatum deserunt modi numquam eum aliquam voluptatibus illum reprehenderit excepturi nostrum laudantium eveniet.</div>
+        <div class="items">, temporibus voluptates quibusdam id dolores, laborum voluptatum deserunt modi numquam eum aliquam voluptatibus illum reprehenderit excepturi nostrum laudantium eveniet</div>
+        <div class="items">, temporibus voluptates quibusdam id dolores, laborum voluptatum deserunt modi numquam eum aliquam voluptatibus illum reprehenderit excepturi nostrum</div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+    </div>
+</body>
+</html>

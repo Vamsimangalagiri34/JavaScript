@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbackfunction</title>
+    <!-- 
+        used in asynchronoys operation
+        reading a file
+        network request
+        inteaction with database
+     -->
+</head
+<body>
+    <script>//callback function is nothing but passing function as parameter to another function
+        function fun1(){//it is same as python decorators
+            console.log('im form fun1 d');
+        }
+
+        function fun2(){
+            console.log('im form fun2');
+        }
+
+        function fun3(){
+            console.log('im form fun3');
+        }//when we assign a varialbe by a function name than the varable hold the name function
+        const fvar1=fun1;//fvar1 is assigned the function fun1.
+        function callback1(fvar1){
+           fvar1();
+        }
+      
+     const fvar2=fun2;//fvar2 is assigned the function fun2
+     console.log(typeof fvar2)//function
+     function callback2(fvar2){
+        fvar2();
+     }
+     callback1(fvar1);
+     callback2(fvar2);
+    </script>
+</body>
+</html>

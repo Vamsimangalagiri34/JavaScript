@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+    <style>
+    
+      details ol{
+        height: 300px;
+        width: 200px;
+        background: rebeccapurple;
+      }
+      details ol li{
+        margin-top: 10px;
+        list-style: none;
+      }
+    </style>
+</head>
+<body>
+    <p>tagalaga megame egurinka nigu vypuke</p>
+    <details>
+     <summary style="background:wheat;color:black;display:inline">Jeans</summary>
+     <ol>
+     <li>Wrangle</li>
+     <li>Pepe jeans</li>
+     <li>Calvin Klein</li>
+     <li>mufti</li>
+     <li>Disel</li>
+     <li>Allen solly</li>
+    </ol>
+    </details>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var detailsElement = document.querySelector('details');
+        
+            detailsElement.addEventListener('mouseover', function () {
+              this.setAttribute('open', '');
+            });
+        
+            detailsElement.addEventListener('mouseout', function () {
+              this.removeAttribute('open');
+            });
+          });
+    </script>
+</body>
+</html>

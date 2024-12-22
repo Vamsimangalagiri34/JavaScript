@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async and await2</title>
+</head>
+<body>
+    <script>
+        const e=new Promise((resolve,reject)=>{
+       setTimeout(()=>{
+   resolve("prise resolved value");
+       },10000); //if it is 5 sec execute
+        });
+
+        const e2=new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+        resolve("prise resolved value");
+            },5000); //if its is 10 sec run concurrently with 1st after runing it takes 5 sec to excute
+             });
+
+        async function handleP(){
+            console.log("hello world");
+            const val=await e;//it stops the hole code for 10sec after that promise fullfiled it execute remaing part
+            console.log("name is vamsi");
+            console.log(val); 
+
+            console.log("hello world");
+            const val2=await e2;//here it will also get stope but after executing  first it get executed first one takes 10sec by the internaly it get runnug when 1st takes 10 sec it get execute by with 1st innternal after 1st it get execute
+            console.log("name is vamsi2");
+            console.log(val2); 
+
+
+        }
+
+       
+        handleP();
+    </script>
+</body>
+</html>

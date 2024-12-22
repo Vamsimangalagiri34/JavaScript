@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>empty</title>
+    <style>
+        /* @media max means it should be 200px or specifed size than after only styles are applied
+@media min means if size is greater than only it applied */
+        <!--  -->
+        .Div {
+            height: 300px;
+            width: 50%;
+            border-radius: 5px;
+            border: 2px solid gray;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Div ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
+
+        .Div li {
+            display: inline-flex;
+            margin-right: 10px;
+        }
+
+        /* Media queries */
+     @media (max-width:400px){
+        body{
+            
+            background-color: palevioletred;
+        }
+        *{
+            font-size: 15px;
+        }
+        .Div{
+            width: 88%;
+        }
+
+     }
+     @media (min-width:500px){
+        body{
+            background-color: rebeccapurple;
+        }
+        *{
+            font-size: 17px;
+        }
+        .Div{
+            width: 88%;
+        }
+     }
+     @media (min-width:800px){
+        body{
+            background-color: aquamarine;
+        }
+     }
+
+        /* Style for the paragraph displaying window width */
+        #widthDisplay {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 8px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var d = document.createElement('div');
+        d.className = 'Div';
+
+        const ca = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+        var ul = document.createElement('ul');
+
+        for (var i = 0; i < ca.length; i++) {
+            var li = document.createElement('li');
+            li.innerHTML = ca[i];
+            ul.append(li);
+        }
+
+        const bd = document.querySelector('body');
+        bd.append(d); // Appending the created div
+        d.append(ul);
+
+        const pa = document.createElement('p');
+        pa.id = 'widthDisplay'; // Assign an ID for styling
+        function displayWidth() {
+            const width = window.innerWidth;
+            pa.innerText = 'Window Width: ' + width + 'px';
+        }
+
+        window.addEventListener('resize', displayWidth);
+        bd.append(pa);
+        displayWidth(); // Display width initially
+    </script>
+</body>
+</html>

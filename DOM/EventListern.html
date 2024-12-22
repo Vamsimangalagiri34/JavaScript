@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+    <style>
+        /* Styles for the tooltip */
+        .tooltip {
+            /* Your tooltip styles go here */
+            color: red;
+        }
+        ul {
+            display: flex;
+            text-decoration: none;
+        }
+        ul li {
+            /* Styling for list items */
+            text-decoration: none;
+            margin-left: 20px;
+            border: 2px solid black;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const c = document.createElement('div');
+        c.className = 'va';
+        c.innerText = 'Mon 12';
+        const b = document.querySelector('body');
+        b.appendChild(c);
+        var v = document.querySelector('.va');
+        v.addEventListener('click', itsme);
+        v.style.cursor = 'pointer';
+        v.style.border = '1px solid black';
+        v.style.display = 'inline';
+        v.style.borderRadius = '5px';
+        v.style.padding = '4px';
+        var count = 1;
+
+        function itsme() {
+            var temp = count++;
+            console.log(temp);
+            if (temp === 1) {
+                c.title = "maximum 3 only";
+                c.classList.add('tooltip'); // Apply tooltip styles using a class
+                v.removeEventListener('click', itsme); // Remove the event listener
+
+                // Creating an ordered list and adding list items with different timings
+                const c3 = document.createElement('ul');
+                const timings = ['10:00 AM','2:15PM','5:00PM','8:30PM','11:45PM']; // Different timings
+                for (let i = 0; i < timings.length; i++) {
+                    const c4 = document.createElement('li');
+                    c4.innerText = timings[i];
+                    c3.append(c4);
+                }
+                b.appendChild(c3);
+            }
+        }
+    </script>
+</body>
+</html>

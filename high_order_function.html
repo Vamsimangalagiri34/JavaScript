@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>higher order functions</title>
+    <!-- filter(): This method creates a new array with elements that pass a certain condition specified in a callback function. It iterates through each element of the array and includes elements that satisfy the condition. -->
+    <!-- map(): It creates a new array by applying a function to each element in the original array. It transforms each element of the array into something else based on the provided function -->
+    <!-- reduce(): This method "reduces" the array to a single value by executing a reducer function on each element, resulting in a single output value. It can be used for operations like summing up all elements, calculating averages, etc. -->
+</head>
+<body>
+    <script>
+        const lis=[2,3,5,6];
+        var res=lis.map(item=> item*2);
+        console.log(res);
+        const l=[345,6,35,36];
+        var res2 = l.filter(fil => fil > 6 );
+        console.log(res2);
+        const r=[6,74,64];
+        s=0;
+        var t=r.reduce((a,b)=> a+b);
+        console.log(t);
+    </script>
+</body>
+</html>

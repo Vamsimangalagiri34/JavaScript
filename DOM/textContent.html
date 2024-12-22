@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textContent vs innerHTML</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>name</li>
+        <li>age</li>
+        <li>address</li>
+        <li style="display:none;">phno</li>
+    </ul>
+    <div id="ram"> </div>
+    <script>
+        let jam = document.getElementById("menu");
+        console.log(jam.textContent); // Outputs the text content
+        console.log(jam.innerText);   // Outputs the visible text (considering styling)
+
+        let rm = document.getElementById("ram");
+        rm.innerHTML = "<h2>gampal</h2>"; // Adds the HTML content
+
+        // Using textContent to set HTML content
+        rm.textContent = "<h2>ram</h2>"; // Won't render as HTML, treats as plain text
+    </script>
+</body>
+</html>

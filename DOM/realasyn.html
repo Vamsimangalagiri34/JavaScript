@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <button id="fetchButton">Fetch Weather</button>
+    <div id="weatherResult"></div>
+
+    <script>
+        // Simulate fetching weather data from an API
+        function fetchWeather(callback) {
+            setTimeout(() => {
+                const weatherData = { temperature: 25, condition: 'Sunny' };
+                callback(weatherData);
+            }, 2000);
+        }
+
+        // Update the UI with weather information
+        function updateUI(weatherData) {
+            const weatherResultDiv = document.getElementById('weatherResult');
+            weatherResultDiv.innerHTML = `Temperature: ${weatherData.temperature}°C, Condition: ${weatherData.condition}`;
+        }
+        
+
+        // Event listener for the Fetch Weather button
+        document.getElementById('fetchButton').addEventListener('click', () => {
+            console.log('Button clicked');
+
+            // Initiating asynchronous operation (fetching weather data)
+            fetchWeather((data) => {
+                console.log('Weather data received:', data);
+
+                // Updating the UI with the received data
+                updateUI(data);
+            });
+
+            console.log('Fetching weather data...');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic placeholder</title>
+    <!-- <style>
+        input placeholder{
+            transition: 2s;
+        }
+    </style> -->
+</head>
+<body>
+    <input type="text" placeholder="" id="plh" spellcheck="true">
+    <script>
+        var isTrue = false;
+        const arr = ['Salaar', 'Jawan', 'Bhagavanth Kesari', 'Bhahubali','F2','mad'];
+
+        function canI() {
+            let i = 0;
+            setInterval(() => {
+                const pl = document.getElementById("plh").placeholder ="Search for "+ `' ${arr[i]} '`;
+                i = (i + 1) % arr.length; // Move to the next element in the array
+            }, 2000);
+        }
+
+            canI();
+
+        <!-- changeMyPl(); -->
+    </script>
+</body>
+</html>

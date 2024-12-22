@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        .d1{
+            height: 300px;
+            width: 500px;
+            background-color: aqua;
+        }
+        *{
+            margin: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .d1 
+    </style>
+</head>
+<body>
+    <script>
+        const d=document.createElement('div');
+        d.classList.add('d1');
+        var a=[1,2,4,5,6,7,8,9,0];
+        const s=document.createElement('ul');
+        for(var x of a){
+            var l=document.createElement('li');
+            l.innerHTML=x;
+            s.append(l);
+        }
+        d.append(s);
+        const bd=document.querySelector('body');
+        bd.append(d);
+    </script>
+</body>
+</html>

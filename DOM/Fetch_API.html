@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embedded YouTube Video</title>
+</head>
+<body>
+  <div id="player"></div>
+
+  <script>
+    // YouTube video ID
+    const videoId = 'widWy7OCoro'; // Replace this with your YouTube video ID
+
+    // Create a YouTube player
+    function onYouTubeIframeAPIReady() {
+      new YT.Player('player', {
+        height: '360',
+        width: '640',
+        videoId: videoId,
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      event.target.playVideo(); // Auto-play the video when ready (optional)
+    }
+
+    function onPlayerStateChange(event) {
+      // Handle video player state changes if needed
+    }
+  </script>
+  
+  <!-- Include the YouTube iframe API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>

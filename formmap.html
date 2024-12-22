@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <div id="p1"></div>
+    <form>
+        <input type="text" placeholder="Enter name" id="name">
+        <input type="password" placeholder="Enter password" id="pwd">
+        <input type="button" value="Submit" onclick="validate()">
+    </form>
+    <script>
+        const map = new Map();
+
+        function validate() {
+            let name = document.getElementById("name").value;
+            let password = document.getElementById("pwd").value;
+            validat(name, password);
+        }
+
+        function validat(name, password) {
+            if (name !== "" && password !== "") {
+                const c = new One(name, password);
+                let result = c.getData();
+                map.set(name, password);
+                displayNames();  // Display names and passwords in the map
+            } else {
+                alert("Fields must not be empty!");
+            }
+        }
+
+        function displayNames() {
+            console.log("Names and passwords in the map:");
+            map.forEach((value, key) => {
+                console.log(`Name: ${key}, Password: ${value}`);
+            });
+        }
+
+        class One {
+            constructor(name, password) {
+                this.name = name;
+                this.password = password;
+            }
+
+            getData() {
+                return this.name + " " + this.password;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise2</title>
+</head>
+<body>
+    <script>
+      function walkdog(){
+        return new Promise((resolve,reject)=>{
+           setTimeout(()=>{
+            resolve('you walk the dog');
+           },1500);
+        });
+      }
+      function cleanKitchen(){
+        return new Promise((resolve,reject)=>{
+           setTimeout(()=>{
+            resolve('cleaning the kitchen');
+           },2000)
+        });
+      }
+      function tashOut(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                console.log('trashed out');
+                alert("kmd");
+            },500)
+        });
+      }
+      walkdog().then(value=>{console.log(value); return cleanKitchen()})
+       .then(value=>{console.log(value);    return tashOut()})
+       .catch(er=>{console.log(er);
+           
+    })
+       //Each .then() block in this chain is waiting for the previous Promise to resolve before executing its code and potentially returning another Promise, 
+       //creating a sequential flow of asynchronous operations.
+    </script>
+</body>
+</html>

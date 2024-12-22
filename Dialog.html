@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog</title>
+    <style>
+        .btn2{
+            border: none;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+   <h2>hello Universe</h2>
+   <dialog>
+    <p>PLease do login</p>
+    <button class="btn2">X</button>
+   </dialog>
+   <script>
+    const dia=document.querySelector('dialog');
+    const btn=document.querySelector('.btn2');
+    setTimeout(()=>{
+        dia.showModal();
+    },2000);
+    btn.addEventListener('click',()=>{
+        dia.close();
+    })
+   </script>
+</body>
+</html>
